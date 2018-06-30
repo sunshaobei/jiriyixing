@@ -10,8 +10,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+   >
 
 
     <android.support.constraint.ConstraintLayout
