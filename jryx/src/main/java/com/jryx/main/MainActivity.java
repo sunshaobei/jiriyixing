@@ -1,14 +1,14 @@
-package com.jryx;
+package com.jryx.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.jryx.R;
 import com.jryx.base.BaseActivity;
 
 import butterknife.BindView;
@@ -18,8 +18,6 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-    @BindView(R.id.bottom_navigation)
-    BottomNavigationView bottomNavigation;
     @BindView(R.id.nav)
     NavigationView navigationView;
     @BindView(R.id.activity_view)
@@ -45,6 +43,10 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+    }
 
+    @Override
+    public boolean isStatusBarTextDackColor() {
+        return false;
     }
 }
