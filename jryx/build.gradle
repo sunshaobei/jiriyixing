@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion ANDROID_BUILD_SDK_VERSION as int
-    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
     defaultConfig {
         applicationId "com.jryx"
         minSdkVersion ANDROID_BUILD_MIN_SDK_VERSION as int
