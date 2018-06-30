@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -56,7 +57,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.cl_main_video)
     ConstraintLayout clMainVideo;
 
-    private List<TextView> tvList = new ArrayList<>();
+    private List<ViewGroup> menuList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,49 +71,24 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initBottom() {
-        tvList.add(tvMainHome);
-        tvList.add(tvMainCollection);
-        tvList.add(tvMainCircle);
-        tvList.add(tvMainVideo);
-        initTab(0);
-    }
-
-    private void updateIc(int pos) {
-    }
-
-    private void updateTextColor(int pos) {
-
-        for (TextView tv : tvList) {
-            tv.setTextColor(getResources().getColor(R.color.text_color_gray));
+        menuList.add(clMainHome);
+        menuList.add(clMainCollection);
+        menuList.add(clMainCircle);
+        menuList.add(clMainVideo);
+        for (ViewGroup viewGroup : menuList) {
+            viewGroup.setOnClickListener(this::update);
         }
-        tvList.get(pos).setTextColor(getResources().getColor(R.color.mainColor));
+        update(clMainHome);
     }
 
-    @OnClick({R.id.cl_main_home,R.id.cl_main_collection,R.id.cl_main_release,R.id.cl_main_circle,R.id.cl_main_video})
-    public void clickBottom(View view) {
-        switch (view.getId()) {
-            case R.id.cl_main_home:
-                initTab(0);
-                break;
-            case R.id.cl_main_collection:
-                initTab(1);
-                break;
-            case R.id.cl_main_release:
-                break;
-            case R.id.cl_main_circle:
-                initTab(2);
-                break;
-            case R.id.cl_main_video:
-                initTab(3);
-                break;
-            default:
-                break;
+    private void update(View v) {
+        for (ViewGroup viewGroup : menuList) {
+            if (viewGroup.equals(v)) {
+                viewGroup.setSelected(true);
+            } else {
+                viewGroup.setSelected(false);
+            }
         }
-    }
-
-    private void initTab(int pos) {
-        updateIc(pos);
-        updateTextColor(pos);
     }
 
     @Override
