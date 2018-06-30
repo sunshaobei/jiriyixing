@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,7 +12,11 @@ import android.widget.TextView;
 import com.jryx.R;
 import com.jryx.base.BaseActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
@@ -50,8 +55,8 @@ public class MainActivity extends BaseActivity {
     TextView tvMainVideo;
     @BindView(R.id.cl_main_video)
     ConstraintLayout clMainVideo;
-    @BindView(R.id.cl_main_bottom)
-    ConstraintLayout clMainBottom;
+
+    private List<TextView> tvList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +66,53 @@ public class MainActivity extends BaseActivity {
     }
 
     protected void initView() {
+        initBottom();
+    }
 
+    private void initBottom() {
+        tvList.add(tvMainHome);
+        tvList.add(tvMainCollection);
+        tvList.add(tvMainCircle);
+        tvList.add(tvMainVideo);
+        initTab(0);
+    }
+
+    private void updateIc(int pos) {
+    }
+
+    private void updateTextColor(int pos) {
+
+        for (TextView tv : tvList) {
+            tv.setTextColor(getResources().getColor(R.color.text_color_gray));
+        }
+        tvList.get(pos).setTextColor(getResources().getColor(R.color.mainColor));
+    }
+
+    @OnClick({R.id.cl_main_home,R.id.cl_main_collection,R.id.cl_main_release,R.id.cl_main_circle,R.id.cl_main_video})
+    public void clickBottom(View view) {
+        switch (view.getId()) {
+            case R.id.cl_main_home:
+                initTab(0);
+                break;
+            case R.id.cl_main_collection:
+                initTab(1);
+                break;
+            case R.id.cl_main_release:
+                break;
+            case R.id.cl_main_circle:
+                initTab(2);
+                break;
+            case R.id.cl_main_video:
+                initTab(3);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void initTab(int pos) {
+        updateIc(pos);
+        updateTextColor(pos);
     }
 
     @Override
