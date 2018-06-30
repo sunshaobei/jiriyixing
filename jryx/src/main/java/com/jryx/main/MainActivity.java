@@ -1,4 +1,4 @@
-package com.jryx;
+package com.jryx.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jryx.R;
 import com.jryx.base.BaseActivity;
 
 import butterknife.BindView;
@@ -78,7 +79,11 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+    }
 
+    @Override
+    public boolean isStatusBarTextDackColor() {
+        return false;
     }
 
 
