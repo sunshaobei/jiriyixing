@@ -1,13 +1,9 @@
 package com.jryx.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,8 +18,6 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-    @BindView(R.id.nav)
-    NavigationView navigationView;
     @BindView(R.id.activity_view)
     DrawerLayout drawerLayout;
     @BindView(R.id.titleBar)
@@ -67,17 +61,6 @@ public class MainActivity extends BaseActivity {
     }
 
     protected void initView() {
-        View headerView = navigationView.getHeaderView(0);//获取头布局
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                //item.setChecked(true);
-                //TODO
-
-                drawerLayout.closeDrawer(navigationView);
-                return true;
-            }
-        });
 
     }
 
