@@ -9,4 +9,5 @@
     <color name="mainColor">#f45850</color>
     <color name="text_color_gray">#999999</color>
     <color name="black">#000000</color>
+    <color name="text_blue">#1896ee</color>
 </resources>
