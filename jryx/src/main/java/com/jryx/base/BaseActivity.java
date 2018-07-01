@@ -136,7 +136,7 @@ public abstract class BaseActivity extends SwipeBackActivity {
                         }
                     } else {
                         String title = PermissionUtils.PermissionEnum.statusOf(PermissionUtils.getShouldShowRequestPermission(this, this.permissons)).getDenidStr();
-                        final SweetAlertDialog dialog = new SweetAlertDialog(this,SweetAlertDialog.WARNING_TYPE);
+                        final SweetAlertDialog dialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
                         dialog.setCanceledOnTouchOutside(false);
                         dialog.setContentText(title);
                         dialog.setCancelText("仍然禁止");

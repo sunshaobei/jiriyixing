@@ -6,7 +6,7 @@ import android.os.Bundle;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class JryxActivity extends BaseBarActivity {
+public abstract class JryxActivity extends BaseActivity {
 
     private Unbinder bind;
 

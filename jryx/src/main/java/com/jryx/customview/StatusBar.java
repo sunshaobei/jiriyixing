@@ -11,16 +11,13 @@ import com.jryx.lib.utils.ScreenUtils;
 
 
 public class StatusBar extends View {
+
     public StatusBar(Context context) {
         super(context);
     }
 
     public StatusBar(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public StatusBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
     }
 
     @Override
