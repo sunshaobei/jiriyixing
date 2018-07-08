@@ -30,7 +30,7 @@ public abstract class LazyLoadFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
             rootView = inflater.inflate(getLayoutId(), null);
-            bind = ButterKnife.bind(this.rootView);
+            bind = ButterKnife.bind(this,rootView);
             isViewCreated = true;
             lazyLoad();
         }
