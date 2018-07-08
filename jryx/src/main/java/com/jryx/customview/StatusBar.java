@@ -25,9 +25,10 @@ public class StatusBar extends View {
         super.onAttachedToWindow();
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
-        if (Build.VERSION.SDK_INT >= 19)
-            layoutParams.height = ScreenUtils.getStatusBarHeight();
+        if (Build.VERSION.SDK_INT >= 19) layoutParams.height = ScreenUtils.getStatusBarHeight();
         else layoutParams.height = 0;
         setLayoutParams(layoutParams);
     }
+
+
 }
